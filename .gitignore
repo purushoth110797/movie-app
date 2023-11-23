@@ -1,0 +1,18 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore logs and other generated files
+*.log
+*.env
+
+# Ignore media and static files
+media/
+
+# Ignore virtual environment
+venv/
+
+# Ignore environment-specific settings and secrets
+.env

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Purushothaman" />
+    <meta
+      name="description"
+      content="Welcome to CinéWorld, your go-to destination for the latest and greatest in the world of cinema! CinéWorld is a user-friendly movie app designed to keep you updated on the newest film releases, allowing you to explore movie details at your fingertips"
+    />
+    <title>CinéWorld</title>
+    <!-- linking the bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- Linking the JS bootstrap -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Linking the external css -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <!-- linking the external js file -->
+    <script defer src="{% static 'js/home.js' %}"></script>
+    <!-- Font awesome script -->
+    <script
+      src="https://kit.fontawesome.com/7fb2d80710.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <h1 class="heading">CinéWorld</h1>
+        <p class="para">Now Playing Movies</p>
+      </div>
+    </header>
+    <main>
+      <!-- update button -->
+      <!-- <form method="post" action="{% url 'update_movies' %}">
+        {% csrf_token %}
+        <button class="btn btn-primary updateBtn" type="submit">Update</button>
+      </form> -->
+      <div class="container outer">
+        {% for movie in movies %}
+        <div class="row">
+          <div class="col-12">
+            <div class="cardContainer shadow-lg">
+              <div class="text-center">
+                <img
+                  class="cardPoster"
+                  src="https://image.tmdb.org/t/p/w500{{ movie.imageURL }}"
+                  alt="{{ movie.title }}"
+                  loading="lazy"
+                />
+              </div>
+              <hr />
+              <div class="movieDesc">
+                <div class="rating-container">
+                  <svg class="progress-circle">
+                    <circle cx="75" cy="75" r="40"></circle>
+                  </svg>
+                  <p class="rating-text" id="rating">
+                    {{ movie.rating | floatformat:1 }}
+                  </p>
+                </div>
+                <div>
+                  <a
+                    class="cardHeading"
+                    href="{% url 'movie_detail' movie.id %}"
+                    >{{ movie.title }}</a
+                  >
+                </div>
+                <p class="date">{{ movie.releaseDate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <!-- pagination -->
+      <div class="pagination-container pt-4 pt-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <!-- Updated: Center-align the row -->
+            <div class="col-12">
+              <span class="step-links">
+                {% if movies.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ movies.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                  Page {{ movies.number }} of {{ movies.paginator.num_pages }}
+                </span>
+
+                {% if movies.has_next %}
+                <a href="?page={{ movies.next_page_number }}">next</a>
+                <a href="?page={{ movies.paginator.num_pages }}"
+                  >last &raquo;</a
+                >
+                {% endif %}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- move to top button -->
+      <button id="moveToTopBtn" onclick="scrollToTop()">Move to Top</button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerContainer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <!-- Fallow us section -->
+              <div class="follow-us-section pt-5" id="follow-us-section-id">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h1 class="follow-us-section-heading">Follow Us</h1>
+                    </div>
+                    <!-- social media icons -->
+                    <div class="col-12 d-flex flex-row justify-content-center">
+                      <div class="icon-container">
+                        <a
+                          href="https://www.linkedin.com/in/purushothaman-110797?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSSFwILf6Q0Wd8ofFy1buWg%3D%3D"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-brands fa-linkedin icon"></i>
+                        </a>
+                      </div>
+                      <div class="icon-container">
+                        <a
+                          href="https://en.wikipedia.org/wiki/Instagram"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-brands fa-instagram icon"></i>
+                        </a>
+                      </div>
+                      <div class="icon-container">
+                        <a
+                          href="https://en.wikipedia.org/wiki/Facebook"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="fa-brands fa-facebook icon"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- mail id -->
+              <div class="text-center mt-3">
+                <a
+                  href="mailto:npurush11@gmail.com"
+                  class="footer-section-mail-id"
+                  >npurush11@gmail.com</a
+                >
+              </div>
+
+              <!-- Address -->
+              <div class="text-center mt-3">
+                <address class="footer-section-address">
+                  No:93, Ambedkar nagar, 1<sup>st</sup> street, kolathur,
+                  chennai <span class="nowrap"></span>-600099.
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

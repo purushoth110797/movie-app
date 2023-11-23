@@ -1,0 +1,165 @@
+/* Importing the font style */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap");
+/* Reseting the default padding and margin */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+/* Creating the root element */
+/* Root elements (variables) */
+:root {
+  --backgroundColor: #94618e;
+  --heading: #49274a;
+  --textColor: #361c0a;
+  --btnColor: #f4decb;
+}
+/* general styling */
+body {
+  background-color: var(--backgroundColor);
+  font-family: sans-serif;
+  height: 100vh;
+}
+/* styling the heading */
+.headerContainer {
+  background-image: linear-gradient(rgb(45, 2, 75), purple);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0.02em;
+  z-index: 2;
+}
+/* styling heading */
+.heading {
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+/* styling the heading paragraph */
+.para {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+/* styling the main function */
+main {
+  margin-top: 115px;
+}
+/* styling the poster */
+.cardPoster {
+  padding: 20px;
+  border-radius: 50px;
+}
+
+/* styling the heading */
+#headingDetail {
+  margin-top: 1em;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+/* styling the release date */
+.releaseDate {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/* Styling the rating container */
+.rating-container {
+  background-color: black;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 2em;
+}
+/* Styling the progress circle */
+.progress-circle {
+  fill: none;
+  stroke: greenyellow;
+  stroke-width: 5;
+  stroke-dasharray: 0;
+  transition: stroke-dasharray 1s ease-out;
+  position: relative;
+  top: -35px;
+  left: -35px;
+  z-index: 1;
+}
+/* Styling the rating text */
+.rating-text {
+  position: relative;
+  top: -165%;
+  left: 25%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+}
+/* styling the user score */
+.userScore {
+  width: 300px;
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-left: 0.5em;
+  position: relative;
+  top: -230%;
+  left: 120%;
+}
+
+/* styling the play icon */
+.playIcon {
+  font-size: 2.5rem;
+  color: var(--btnColor);
+  padding-bottom: 1em;
+}
+/* Styling the view trailer description */
+.viewTrailerDesc {
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-left: 0.5em;
+  vertical-align: center;
+}
+/* styling the overview */
+.overview {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+/* Styling the card heading */
+.linkstyle {
+  display: inline-block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 10rem;
+  text-decoration: none;
+  text-wrap: balance;
+}
+/* styling the card heading when hover over it */
+.linkstyle:hover {
+  color: rgb(1, 180, 228);
+  text-decoration: underline;
+  text-shadow: #361c0a;
+}
+
+/* @media screen and (min-width:766px) {
+    #postcontainer{
+        width: 20%;
+    }
+
+   #descontainer{
+    padding-right: 100px;
+    width: 60%;
+}
+} */

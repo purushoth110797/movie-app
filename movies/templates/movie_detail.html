@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Purushothaman" />
+    <meta name="description" content="Overview of the selected movie" />
+    <title>CinéWorld-Detailed view</title>
+    <!-- linking the bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <!-- Linking the JS bootstrap -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- Linking the external css -->
+    <link rel="stylesheet" href="{% static 'css/movie_detail.css' %}" />
+    <!-- linking the external js file -->
+    <script defer src="{% static 'js/movie_detail.js' %}"></script>
+    <!-- Font awesome script -->
+    <script
+      src="https://kit.fontawesome.com/7fb2d80710.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- internal styling for the background image -->
+    <style>
+      .bg-container {
+        background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces{{ movie.posterURL }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100vw;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <h1 class="heading">CinéWorld</h1>
+        <p class="para">Now Playing Movies</p>
+      </div>
+    </header>
+    <main>
+      <div class="bg-container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-5" id="postcontainer">
+              <div class="text-center">
+                <img
+                  class="cardPoster"
+                  src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2{{ movie.imageURL }}"
+                  alt="{{ movie.title }}"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <!-- Description -->
+            <div class="col-12 col-md-6 col-lg-7" id="descontainer">
+              {% block content %}
+              <h2 class="heading1" id="headingDetail">{{ movie.title }}</h2>
+              <p class="releaseDate">{{ movie.releaseDate }}</p>
+              <!-- Score and trailer section -->
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <!-- Score element -->
+                    <div class="rating-container">
+                      <svg class="progress-circle">
+                        <circle cx="75" cy="75" r="40"></circle>
+                      </svg>
+                      <p class="rating-text" id="rating">
+                        {{ movie.rating | floatformat:1 }}
+                      </p>
+                      <p class="userScore">User Score</p>
+                    </div>
+                  </div>
+                  <!-- Trailer element -->
+                  <div class="col-12 viewTrailer">
+                    <div class="trailercont">
+                      <!-- Use the trailer_link variable in the href attribute -->
+                      <a
+                        id="viewTrailerBtn"
+                        href="{{ movie.trailer_link }}"
+                        target="_blank"
+                      >
+                        <i class="fa-regular fa-circle-play playIcon"></i>
+                        <p class="viewTrailerDesc">View Trailer</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="overview">{{ movie.overview }}</p>
+              <a class="linkstyle" href="{% url 'movie_list' %}"
+                >Back to Movie List</a
+              >
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
