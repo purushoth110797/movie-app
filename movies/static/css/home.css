@@ -1,300 +1,295 @@
 /* Importing the font style */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@400;700&display=swap");
 /* Reseting the default padding and margin */
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 /* Creating the root element */
 /* Root elements (variables) */
-:root{
-    --backgroundColor: #94618e;
-    --heading: #49274a;
-    --textColor: #361c0a;
-    --btnColor: #f4decb;
+:root {
+  --backgroundColor: #94618e;
+  --heading: #49274a;
+  --textColor: #361c0a;
+  --btnColor: #f4decb;
 }
 /* general styling */
-body{
-    background-color: var(--backgroundColor);
-    font-family: sans-serif;
-    height: 100vh;
+body {
+  background-color: var(--backgroundColor);
+  font-family: sans-serif;
+  height: 100vh;
 }
 /* styling the heading */
-.headerContainer{
-    background-image: linear-gradient(rgb(45, 2, 75), purple);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    padding: 0.02em;
-    z-index: 2;
+.headerContainer {
+  background-image: linear-gradient(rgb(45, 2, 75), purple);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0.02em;
+  z-index: 2;
 }
 /* styling heading */
-.heading{
-    color: white;
-    text-align: center;
-    font-weight: 700;
-    font-size: 2.5rem;
+.heading {
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
 }
 /* styling the heading paragraph */
-.para{
-    color: white;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1.8rem;
+.para {
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
-.updateBtn{
-    margin-left: 15px;
-    position: fixed;
+.updateBtn {
+  margin-left: 15px;
+  position: fixed;
 }
 
-.outer{
-    margin-top: 130px;
+.outer {
+  margin-top: 130px;
 }
 /* Styling the card container */
-.cardContainer{
-    background-color: var(--btnColor);
-    border: 2px solid black;
-    border-radius: 30px;
+.cardContainer {
+  background-color: var(--btnColor);
+  border: 2px solid black;
+  border-radius: 30px;
 }
 /* styling the movie images */
-.cardPoster{
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
+.cardPoster {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
 }
 /* styling the horizontal rule */
-hr{
-    color: black;
-    margin-top: 5px;
+hr {
+  color: black;
+  margin-top: 5px;
 }
 /* Styling the card heading */
-.cardHeading{
-    display: inline-block;
-    color: var(--heading);
-    font-size: 1.8rem;
-    font-weight: 600;
-    padding: 1rem;
-    text-decoration: none;
-    text-wrap: balance;
+.cardHeading {
+  display: inline-block;
+  color: var(--heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 1rem;
+  text-decoration: none;
+  text-wrap: balance;
 }
 /* styling the card heading when hover over it */
-.cardHeading:hover{
-    color: rgb(1,180,228);
-    text-decoration: underline;
-    text-shadow: #361c0a;
+.cardHeading:hover {
+  color: rgb(1, 180, 228);
+  text-decoration: underline;
+  text-shadow: #361c0a;
 }
 /* styling the date element in the card */
-.date{
-    color: var(--textColor);
-    font-weight: 500;
-    font-size: 1.3rem;
-    padding-left: 1rem;
+.date {
+  color: var(--textColor);
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding-left: 1rem;
 }
 /* Styling the rating container */
-.rating-container{
-    background-color: black;
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    top: -50px;
-    left: 25px;
-    margin: 0px;
+.rating-container {
+  background-color: black;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: -50px;
+  left: 25px;
+  margin: 0px;
 }
 /* Styling the progress circle */
 .progress-circle {
-    fill: none;
-    stroke: greenyellow;
-    stroke-width: 5;
-    stroke-dasharray: 0;
-    transition: stroke-dasharray 1s ease-out;
-    position: relative;
-    top: -35px;
-    left: -35px;
-    z-index: 1;
+  fill: none;
+  stroke: greenyellow;
+  stroke-width: 5;
+  stroke-dasharray: 0;
+  transition: stroke-dasharray 1s ease-out;
+  position: relative;
+  top: -35px;
+  left: -35px;
+  z-index: 1;
 }
 /* Styling the rating text */
 .rating-text {
-    position: relative;
-    top: -165%;
-    left: 25%;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: white;
+  position: relative;
+  top: -165%;
+  left: 25%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
 }
 
-
-@media screen and (max-width:2560px) {
-    /* dynamic grid display of the card */
-    .outer{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-    }
-    .cardContainer{
-        height: 750px;
-    }
-    .cardPoster{
-        height: 450px;
-    }
+@media screen and (max-width: 2560px) {
+  /* dynamic grid display of the card */
+  .outer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .cardContainer {
+    height: 750px;
+  }
+  .cardPoster {
+    height: 450px;
+  }
 }
 
-@media screen and (max-width:768px) {
-    /* dynamic grid display of the card */
-    .outer{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-    .cardContainer{
-        height: 750px;
-    }
-    .cardPoster{
-        height: 450px;
-    }
+@media screen and (max-width: 768px) {
+  /* dynamic grid display of the card */
+  .outer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .cardContainer {
+    height: 750px;
+  }
+  .cardPoster {
+    height: 450px;
+  }
 }
 
-@media screen and (max-width:425px) {
-    /* dynamic grid display of the card */
-    .outer{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-    }
+@media screen and (max-width: 425px) {
+  /* dynamic grid display of the card */
+  .outer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
 }
 
 /* styling the pagination */
 .pagination-container {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
+}
 
-  .step-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
+.step-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
 
-  }
+.step-links a {
+  text-decoration: none;
+  background: linear-gradient(to right, rgb(30, 1, 51), rgb(180, 4, 180));
+  color: white;
+  width: 100px;
+  height: 40px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 6px;
+  transition: transform 0.3s ease;
+}
+/* styling when hover the links */
+.step-links a:hover {
+  text-decoration: none;
+  background: linear-gradient(to left, rgb(30, 1, 51), rgb(180, 4, 180));
+  border-color: black;
+  transform: scale(1.07);
+}
 
-  .step-links a {
-    text-decoration: none;
-    background: linear-gradient(to right, rgb(30, 1, 51), rgb(180, 4, 180));
-    color: white;
-    width: 100px;
-    height: 40px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    padding-top: 6px;
-    transition: transform 0.30s ease;
-  }
-  /* styling when hover the links */
-  .step-links a:hover {
-    text-decoration: none;
-    background: linear-gradient(to left, rgb(30, 1, 51), rgb(180, 4, 180));
-    border-color: black;
-    transform: scale(1.07);
-  }
-
-  .step-links .current {
-    text-decoration: none;
-    background: linear-gradient(to left, rgb(30, 1, 51), rgb(180, 4, 180));
-    color: white;
-    width: 120px;
-    height: 40px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    padding-top: 6px;
-  }
+.step-links .current {
+  text-decoration: none;
+  background: linear-gradient(to left, rgb(30, 1, 51), rgb(180, 4, 180));
+  color: white;
+  width: 120px;
+  height: 40px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 6px;
+}
 /* styling the move to TOP button */
-#moveToTopBtn{
-    font-size: 0.8rem;
-    background: linear-gradient(to right, rgb(30, 1, 51), rgb(180, 4, 180));
-    color: white;
-    width: 80px;
-    height: 40px;
-    margin-left: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    padding-top: 2px;
-    transition: transform 0.30s ease;
+#moveToTopBtn {
+  font-size: 1rem;
+  background: linear-gradient(to right, rgb(30, 1, 51), rgb(180, 4, 180));
+  color: white;
+  width: 110px;
+  height: 40px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 2px;
+  transition: transform 0.3s ease;
 }
 /* styling when hover over it */
-#moveToTopBtn:hover{
-    text-decoration: none;
-    background: linear-gradient(to left, rgb(30, 1, 51), rgb(133, 2, 133));
-    border-color: black;
-    transform: scale(1.07);
+#moveToTopBtn:hover {
+  text-decoration: none;
+  background: linear-gradient(to left, rgb(30, 1, 51), rgb(133, 2, 133));
+  border-color: black;
+  transform: scale(1.07);
 }
-
-
 
 /* Styling the footer section */
 
 /* Styling the container */
-.footerContainer{
-    margin-top: 20px;
-    background-image: linear-gradient(rgb(45, 2, 75), purple);
+.footerContainer {
+  margin-top: 20px;
+  background-image: linear-gradient(rgb(45, 2, 75), purple);
 }
 
 /* styling the follow us section */
 /* styling follow us section heading */
-.follow-us-section-heading{
-    font-weight: 700;
-    font-size: 1.75rem;
-    color: white;
-    text-align: center;
+.follow-us-section-heading {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: white;
+  text-align: center;
 }
 /* styling the follow us section icons */
-.icon{
-    color: #d0b200;
-    font-size: 35px;
+.icon {
+  color: #d0b200;
+  font-size: 35px;
 }
 /* styling the follow us icon container */
-.icon-container{
-    width: 80px;
-    height: 80px;
-    background-color: #faf7e8;
-    padding: 22px 16px 14px 22px;
-    margin: 15px;
-    border-radius: 50%;
-    transition: transform 0.20s ease;
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #faf7e8;
+  padding: 22px 16px 14px 24px;
+  margin: 15px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
 }
 
 /* styling the follow us icon container when we hovering over it */
-.icon-container:is(:hover, :focus){
-    background-color: #e6dca8d0;
-    border: 1px solid #e9d77c;
+.icon-container:is(:hover, :focus) {
+  background-color: #e6dca8d0;
+  border: 1px solid #e9d77c;
 }
 
 /* styling the footer section mail id */
-.footer-section-mail-id{
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: #bac8d8;
-    transition: transform 0.20s ease;
+.footer-section-mail-id {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #bac8d8;
+  transition: transform 0.2s ease;
 }
 /* styling the footer section mail id */
-.footer-section-mail-id:is(:hover,:focus){
-    color: rgb(1,180,228);
-    text-decoration: underline;
+.footer-section-mail-id:is(:hover, :focus) {
+  color: rgb(1, 180, 228);
+  text-decoration: underline;
 }
 /* stylint the footer section address */
-.footer-section-address{
-    font-size: 1.5rem;
-    color: #bac8d8;
-    margin-bottom: 50px;
+.footer-section-address {
+  font-size: 1.5rem;
+  color: #bac8d8;
+  margin-bottom: 50px;
 }
-.nowrap{
-    white-space: nowrap;
+.nowrap {
+  white-space: nowrap;
 }
-
